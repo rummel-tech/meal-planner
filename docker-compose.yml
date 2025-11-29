@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  # Meal Planner Backend API
+  meal_planner_api:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    image: meal_planner_api:latest
+    container_name: meal_planner_api
+    ports:
+      - "8010:8000"  # External 8010, Internal 8000
+    environment:
+      - PORT=8000
+      - ROOT_PATH=/meal-planner
+      - CORS_ORIGINS=http://localhost:8081,http://localhost:3000
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/meal-planner/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # Meal Planner Frontend (Flutter Web)
+  # Note: For production, build Flutter web and serve with nginx
+  # For development, run: flutter run -d chrome --web-port 8081
