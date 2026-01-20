@@ -258,4 +258,4 @@ MIT License - See LICENSE file for details
 
 ---
 
-Made with ❤️ by Shawn Rummel
+[Platform Documentation](../../../docs/) | [Product Overview](../../../docs/products/meal-planner.md)
