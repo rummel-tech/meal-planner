@@ -1,0 +1,10 @@
+
+# Environment
+.env
+
+# macOS
+.DS_Store
+
+# Editor swaps
+*.kate-swp
+*.swp
