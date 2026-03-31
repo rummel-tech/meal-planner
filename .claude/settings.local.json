@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls:*)",
+      "Bash(grep -rn \"TODO\\\\|FIXME\\\\|XXX\\\\|HACK\\\\|NotImplementedError\" /home/shawn/_Projects/services/meal-planner/*.py /home/shawn/_Projects/services/meal-planner/routers/ --include=*.py)",
+      "Bash(grep -rn \"password\\\\|secret\\\\|token\\\\|api_key\\\\|credentials\" /home/shawn/_Projects/services/meal-planner/*.py /home/shawn/_Projects/services/meal-planner/routers/*.py --include=*.py)",
+      "Bash(grep -rn \"print\\\\|logger\\\\|logging\\\\|log\\\\\\(\" /home/shawn/_Projects/services/meal-planner/*.py /home/shawn/_Projects/services/meal-planner/routers/*.py --include=*.py)",
+      "Bash(grep -rn \"try\\\\|except\\\\|raise\\\\|Exception\" /home/shawn/_Projects/services/meal-planner/*.py /home/shawn/_Projects/services/meal-planner/routers/*.py --include=*.py)",
+      "Bash(find /home/shawn/_Projects/services/meal-planner -type f \\\\\\(-name *.md -o -name *.txt -o -name *.json \\\\\\) ! -path .venv/*)"
+    ]
+  }
+}
