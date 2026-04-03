@@ -43,7 +43,7 @@ class _MealsHomeScreenState extends State<MealsHomeScreen> {
       });
     } catch (e) {
       setState(() {
-        _weeklyError = '$e';
+        _weeklyError = 'Unable to load weekly plan. Please try again.';
         _loadingWeekly = false;
       });
     }
@@ -62,7 +62,7 @@ class _MealsHomeScreenState extends State<MealsHomeScreen> {
       });
     } catch (e) {
       setState(() {
-        _todayError = '$e';
+        _todayError = 'Unable to load today\'s meals. Please try again.';
         _loadingToday = false;
       });
     }
