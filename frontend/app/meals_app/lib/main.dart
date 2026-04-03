@@ -13,7 +13,10 @@ class MealsApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AppContextProvider(
-      environment: 'development',
+      environment: const String.fromEnvironment(
+        'ENVIRONMENT',
+        defaultValue: 'production',
+      ),
       child: MaterialApp(
         title: AppContext.appName,
         theme: RummelBlueTheme.light(),

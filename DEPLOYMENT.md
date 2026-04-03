@@ -62,9 +62,9 @@ View deployment status and logs:
 
 After successful deployment:
 - **Frontend**: https://srummel.github.io/meal-planner/
-- **Backend API**: http://<ECS_IP>:8010/docs
-  - Health check: http://<ECS_IP>:8010/health
-  - API docs: http://<ECS_IP>:8010/docs
+- **Backend API**: See the infrastructure repository for the current backend domain.
+  - Health check: `https://<BACKEND_DOMAIN>/meal-planner/health`
+  - API docs: `https://<BACKEND_DOMAIN>/meal-planner/docs`
 
 ## Local Development
 
@@ -81,6 +81,14 @@ Frontend:
 cd frontend/app/meals_app
 flutter pub get
 flutter run -d chrome
+```
+
+For a production web build:
+```bash
+cd frontend/app/meals_app
+flutter build web \
+  --dart-define=ENVIRONMENT=production \
+  --dart-define=API_URL=https://<BACKEND_DOMAIN>/meal-planner
 ```
 
 ## Infrastructure Configuration
