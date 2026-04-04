@@ -10,13 +10,15 @@ This guide covers deploying the Meal Planner frontend and backend.
 
 ```bash
 gh workflow run deploy-meal-planner-frontend.yml \
-  --repo rummel-tech/infrastructure
+  --repo <your-github-org>/infrastructure
 ```
 
-### Manual Build
+Workflow definitions live in this monorepo under `infrastructure/.github/workflows/`.
+
+### Manual build
 
 ```bash
-cd modules/planners/meal-planner
+cd meal-planner/frontend/app/meals_app
 flutter build web --release
 # Deploy build/web/ to hosting provider
 ```
@@ -27,10 +29,12 @@ flutter build web --release
 
 ```bash
 gh workflow run deploy-meal-planner-backend.yml \
-  --repo rummel-tech/infrastructure
+  --repo <your-github-org>/infrastructure
 ```
 
-### Local Development
+### Local development
+
+From monorepo root:
 
 ```bash
 cd services/meal-planner

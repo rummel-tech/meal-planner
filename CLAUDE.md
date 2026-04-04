@@ -8,10 +8,10 @@ Guidance for Claude Code when working in this repository.
 
 | Path | Contents |
 |------|----------|
-| `~/_Projects/modules/planners/meal-planner` | This repo — Flutter frontend |
+| `~/_Projects/meal-planner` | This repo — Flutter app + meal-planner assets |
 | `~/_Projects/services/meal-planner` | FastAPI backend |
 | `~/_Projects/services/common` | Shared Python infrastructure |
-| `rummel-tech/resources` | Platform contract + design system |
+| `~/_Projects/resources` | Platform contract + design assets |
 
 ## ⚠️ Documentation Rules
 
@@ -51,6 +51,6 @@ Required endpoints (not yet implemented — coming in next sprint):
 ## Deployment
 
 ```bash
-gh workflow run deploy-meal-planner-frontend.yml --repo rummel-tech/infrastructure
-gh workflow run deploy-meal-planner-backend.yml  --repo rummel-tech/infrastructure
+gh workflow run deploy-meal-planner-frontend.yml --repo <your-org>/infrastructure
+gh workflow run deploy-meal-planner-backend.yml  --repo <your-org>/infrastructure
 ```

@@ -10,30 +10,33 @@ Weekly meal planning application with FastAPI backend and Flutter web frontend.
 - **Responsive UI**: Beautiful Flutter web interface
 - **REST API**: FastAPI backend with automatic documentation
 
-## 📁 Project Structure
+## 📁 Project structure
 
 ```
-meal-planner/
-├── backend/                  # FastAPI backend
-│   ├── main.py              # API endpoints
-│   ├── requirements.txt     # Python dependencies
-│   └── Dockerfile           # Container configuration
-├── frontend/                 # Flutter frontend
+meal-planner/                 # This repo (Flutter + app docs)
+├── frontend/
 │   ├── app/meals_app/       # Main Flutter application
 │   └── packages/meals_ui/   # Reusable UI components
-└── .github/workflows/       # CI/CD workflows
-    ├── deploy-frontend.yml  # GitHub Pages deployment
-    └── deploy-backend.yml   # AWS ECS deployment
+├── docs/                    # App-specific documentation
+└── ...
+
+services/meal-planner/       # FastAPI backend (sibling under monorepo root)
+├── main.py
+├── requirements.txt
+└── Dockerfile
 ```
 
 ## 🏃 Quick Start
 
-### Backend Development
+### Backend development
+
+From the monorepo root:
 
 ```bash
-cd backend
+cd services/meal-planner
 python -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
+pip install -e ../common
 uvicorn main:app --reload --port 8010
 ```
 
@@ -50,7 +53,7 @@ flutter run -d chrome
 ### Docker
 
 ```bash
-cd backend
+cd services/meal-planner
 docker build -t meal-planner:local .
 docker run -p 8010:8000 meal-planner:local
 ```
@@ -249,13 +252,13 @@ MIT License - See LICENSE file for details
 - **Workout Planner**: AI-powered fitness coaching platform
   - Repository: https://github.com/srummel/workout-planner
 
-## 📚 Platform Documentation
+## 📚 Platform documentation
 
-- **[Central Documentation](https://github.com/srummel/documentation)** - Platform-wide patterns and guides
-- **[Multi-App Architecture](https://github.com/srummel/documentation/blob/main/architecture/multi-app-architecture.md)** - How all apps work together
-- **[Port Allocation](https://github.com/srummel/documentation/blob/main/references/port-allocation.md)** - Port allocation strategy
-- **[Deployment Guides](https://github.com/srummel/documentation/blob/main/deployment/)** - Production deployment
+- [Documentation hub](../docs/README.md) (monorepo `docs/`)
+- [Multi-app architecture](../docs/architecture/multi-app-architecture.md)
+- [Port allocation](../docs/references/port-allocation.md)
+- [Deployment guides](../docs/deployment/)
 
 ---
 
-[Platform Documentation](../../../docs/) | [Product Overview](../../../docs/products/meal-planner.md)
+[Documentation hub](../docs/) · [Meal Planner product doc](../docs/products/meal-planner.md)
